@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class ch1{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the value of a :"); 
+        int a = input.nextInt();
+
+        System.out.println("Enter the value of b :");
+        int b = input.nextInt();
+
+        double c = calculate(a, b);
+        System.out.println(c);
+
+        double d = sum(b);
+        System.out.println(d);
+
+    }
+
+    public static double calculate(int base, int power){
+        if(power == 1){
+            return base;
+        }
+        else{
+            return (base * calculate(base, power-1));
+        }
+    }
+
+    public static double sum(int n){
+        if(n == 1) return 1;
+        else{
+            return n + sum(n-1);
+        }
+
+    }
+}
