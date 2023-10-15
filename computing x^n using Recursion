@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class ch1{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the value of a :"); 
+        int a = input.nextInt();
+
+        System.out.println("Enter the value of b :");
+        int b = input.nextInt();
+
+        double c = calculate(a, b);
+        System.out.println(c);
+
+    }
+
+    public static double calculate(int base, int power){
+        if(power == 1){
+            return 2;
+        }
+        else{
+            return (base * calculate(base, power-1));
+        }
+    }
+}
